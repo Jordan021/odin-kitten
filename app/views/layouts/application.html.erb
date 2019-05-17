@@ -10,6 +10,11 @@
   </head>
 
   <body>
+  <%= link_to "Home", root_url%>
+  <%= link_to "New", new_kitten_path %>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,10 @@
+<h1>All Kittens</h1>
+<% @kitten.each do |kitten| %>
+  <ul>Name: <%= kitten.name %> 
+    <li>Age <%= kitten.age %></li>
+    <li>Cuteness <%= kitten.cuteness %></li>
+    <li>Softness <%= kitten.softness %></li>
+    <li><%= link_to "Remove", kitten_path(kitten.id), method: :delete,
+                                      data: { confirm: "You sure?" }%></li>
+  </ul>
+<% end %>
